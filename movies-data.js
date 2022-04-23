@@ -8,8 +8,6 @@ let filmler = [
         "url": "1",
         "imdb": "7,5",
         "name": "No time for Die",
-
-
     },
     {
 
