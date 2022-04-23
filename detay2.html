@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="film.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+  
+    <script src="movies-data.js">
+
+
+
+    </script>
+</head>
+
+<body  style="background-color: rgba(8, 7, 7, 0.89);">
+     
+    
+     <div class="detay2 row"  >  
+        <div class="navbar  fixed-top" id="navbar">
+            <h1 style="color: red;cursor: pointer;width: 10%; " id="logo">KelFlix</h1>
+            <ul>
+                <a class="link" href="film.html" style="text-decoration:none;">Home</a>
+                <a class="link" href="movie.html" style="text-decoration:none;">Movies</a>
+                <a class="link" href="series.html" style="text-decoration:none;">Series</a>
+                <a class="link" href="popular.html" style="text-decoration:none;" >Popular</a>
+                <a class="link" href="trends.html" style="text-decoration:none;">Trends</a>
+              <a href="sign.html" style=text-decoration:none;>
+                    <button class="btn " id=""
+                        style="width: 80px;height: 40px;  background-color: red; color: white; font-size: 17px;">Sign
+                        ln</button></a>
+            </ul>
+          
+    
+        </div>
+          
+        </div>
+      
+
+</body>
+
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const type = urlParams.get("type")
+    let current_series
+    switch (type) {
+
+
+        case "bölüm":
+            current_series = series[urlParams.get("id") - 1]
+            break
+
+
+    }
+
+
+
+    let detay2 = document.querySelectorAll(".detay2")[0]
+
+
+   current_series.episodes.forEach((e) => {
+         detay2.innerHTML +=  `
+ 
+         <div class="blm col-6 col-md-4 col-lg-2">
+            <br>       <br>
+                
+            <a  href="detay2.html?id=${e.url}"> </a> 
+            
+            
+        
+            <a href="#" >  <div><img src="${e.resim}"  ></a>
+                
+            
+                
+            <div >   <h2 style="color:white;">&nbsp${e.name}</h2>  </div>
+            <br><br><br>
+            
+        </div >
+           
+        
+    `
+    })
+
+
+
+</script>
+
+</html>

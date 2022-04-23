@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="movies-data.js">
+
+    </script>
+</head>
+
+<body>
+    <div class="detay"></div>
+
+</body>
+
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const type = urlParams.get("type")
+    let current_movie
+    switch (type) {
+        case "film":
+            current_movie = filmler[urlParams.get("id") - 1]
+            break
+
+        case "dizi":
+            current_movie = diziler[urlParams.get("id") - 1]
+            break
+
+        case "pop":
+            current_movie = popular[urlParams.get("id") - 1]
+            break
+
+        case "trend":
+            current_movie = trends[urlParams.get("id") - 1]
+            break
+            case "bölüm":
+            current_series = series[urlParams.get("id") - 1]
+            break   
+        
+    }
+
+
+
+    let detay = document.querySelectorAll(".detay")[0]
+
+
+
+    detay.innerHTML += ` <div class="img-box  p-0 px-1 py-1 col-6 col-md-4 col-lg-3 col-xl-2">
+        <a  href="detay.html?id=${current_movie.url}">
+            <video src="" class="movie lazy" controls  autoplay style="width:85%; height:45%; "></video>
+            
+            </a>    </div>
+        <h1>${current_movie.name}</h1>
+        
+    `
+
+</script>
+
+
+</html>
