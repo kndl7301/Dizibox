@@ -1,3 +1,14 @@
+<?php 
+
+session_start();
+$baglan = mysqli_connect("localhost","root","","login") or die("connection failed:".connection_error());
+
+ 
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Dizibox</title>
     <link rel="icon" type="image/jpg" href="pictures/hd.jpg">
@@ -24,18 +35,65 @@
     <div class="navbar  fixed-top" id="navbar">
         <h1 style="color: red;cursor: pointer;width: 10%; " id="logo">Dizibox</h1>
         <ul>
-            <a class="link" href="film.html">Home</a>
+            <a class="link" href="film.php">Home</a>
             <a class="link" href="movie.html">Movies</a>
             <a class="link" href="series.html">Series</a>
             <a class="link" href="">Popular</a>
             <a class="link" href="">Trends</a>
-            <a href="sign.html">
-            <button class="btn " id="sgn"style="width: 80px;height: 40px;  background-color: red; color: white; font-size: 17px;">Sign ln</button>
-                </a>
-               
-        </ul>
+           
+            <a href="login.php" class="btn btn-danger">logout <br></a>
 
-        
+            
+
+            <div class="dropdown">
+                <i class="fa fa-bars" style="font-size: 35px;color: blue;"></i>
+                <div class="dropdown-content">
+                    
+                        <li><br> email:
+                            <?php  echo $_SESSION['email']?>
+                        <br></li>
+                        <hr>
+                        <li> password:
+                            <?php  echo $_SESSION['password']?>
+                        <br></li>
+                        <hr>
+                        <a href="change-password.php"><li>change password  </li>   <br></a>
+                       
+                  
+                </div>  
+            </div>
+             
+            <style>
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                    margin-left: -80px;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    color: white;
+                    position: absolute;
+                    background-color: #000000;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    padding: 12px 16px;
+                    z-index: 1;
+              
+                    margin-left: -80px;
+                }
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+
+                li{
+                    list-style:none;
+                }
+            </style>
+
+
+
     </div>
 
 
@@ -57,7 +115,7 @@
 
 
         <a href="" style="margin-top: -360px; margin-left: -5px;">
-            <img src="icons/bookmark.svg" width="32px" height="32px"
+            <img src="icons/bookmarks.svg" width="32px" height="32px"
                 style="border-radius: 40%; color: aliceblue;background-color:aliceblue; margin-top: 660px ;margin-left: -30px;">
         </a>
 
@@ -83,7 +141,7 @@
 
         <a href="https://www.tiktok.com/">
             <img src="icons/tiktok.svg" width="32px" height="32px"
-            style="border-radius: 40%;background-color:aliceblue; margin-top: 660px ;margin-left: -30px;">
+                style="border-radius: 40%;background-color:aliceblue; margin-top: 660px ;margin-left: -30px;">
         </a>
 
 
@@ -132,20 +190,20 @@
                     <div class="col-2">
                         <h5>Section</h5>
                         <ul class="nav flex-column">
-                            <li ><a href="#" class=" text-muted">Home</a></li>
-                            <li ><a href="#" class=" text-muted">Features</a></li>
-                            <li ><a href="#" class=" text-muted">FAQs</a></li>
-                            <li ><a href="#" class=" text-muted">About</a></li>
+                            <li><a href="#" class=" text-muted">Home</a></li>
+                            <li><a href="#" class=" text-muted">Features</a></li>
+                            <li><a href="#" class=" text-muted">FAQs</a></li>
+                            <li><a href="#" class=" text-muted">About</a></li>
                         </ul>
                     </div>
 
                     <div class="col-2">
                         <h5>Section</h5>
                         <ul class="nav flex-column">
-                            <li ><a href="#" class=" text-muted">Help center</a></li>
-                            <li ><a href="#" class=" text-muted">Privacy</a></li>
-                            <li ><a href="#" class=" text-muted">Speed test</a></li>
-                            <li ><a href="#" class=" text-muted">Account</a></li>
+                            <li><a href="#" class=" text-muted">Help center</a></li>
+                            <li><a href="#" class=" text-muted">Privacy</a></li>
+                            <li><a href="#" class=" text-muted">Speed test</a></li>
+                            <li><a href="#" class=" text-muted">Account</a></li>
                         </ul>
                     </div>
 
@@ -153,10 +211,10 @@
                         <h5>Section</h5>
                         <ul class="nav flex-column">
                             <li><a href="#" class=" text-muted">Media Center</a></li>
-                            <li ><a href="#" class=" text-muted">Ways to Watch</a></li>
-                            <li ><a href="#" class=" text-muted">Only Dizibox</a>
+                            <li><a href="#" class=" text-muted">Ways to Watch</a></li>
+                            <li><a href="#" class=" text-muted">Only Dizibox</a>
                             </li>
-                            <li ><a href="#" class=" text-muted">Contact Us</a></li>
+                            <li><a href="#" class=" text-muted">Contact Us</a></li>
                         </ul>
                     </div>
 
@@ -192,7 +250,7 @@
 
                 <div class="d-flex justify-content-between py-4 my-4 border-top">
                     <p>© 2021 Company, Inc. All rights reserved.</p>
-                    
+
                 </div>
             </footer>
         </div>
@@ -219,3 +277,5 @@
 <script src="movies-data.js"></script>
 
 </html>
+
+
