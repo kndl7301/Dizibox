@@ -19,16 +19,16 @@ $baglan = mysqli_connect("localhost","root","","kayit") or  die("connection fail
 </head>
 <body  style="background-image: url(pictures/netflıxbackground.jpg);">
 
-<div class="container">
+<div class="container " id="login">
 	<br>
 	<h2> Sign ln</h2>
 <form method="POST" action=""><br><br>
-	<input type="search" name="email" class="email form-control" placeholder="@email"><br><br>
-	<input type="password" name="password" class="şifre" placeholder="password"><br><br>
+	<input type="search" id="email" name="email" class="email form-control" placeholder="@email" ><br><br>
+	<input type="password" id="password" name="password" class="şifre" placeholder="password"><br><br>
 	
 
-	<input class="login" type="submit" name="login" value="login"><br><br>
-	<input class="sign" type="submit" name="sign" value="sign"><br><br>
+	<input class="login" id="lgn" type="submit" name="login" value="login"><br><br>
+	<input class="sign" id="sgn" type="submit" name="sign" value="sign"><br><br>
 
 	</form>
 
@@ -187,6 +187,33 @@ if (empty($email && $password)) {
 			font-family: sans-serif;
 			font-size: 25px;
 			color: white;
+		}
+
+		@media (max-width:420px){
+
+			#login{
+				margin-top: 50px;
+				margin-left: 50px;
+				height:550px;
+				width:260px;
+			}
+			#email{
+				width:250px;
+			}
+			#password{
+				width:250px;
+			}
+			
+			#lgn{
+				width:250px;
+			}
+			#sgn{
+				width:250px;
+			}
+			h2{
+				margin-left: 50px;
+			}
+		
 		}
 
 </style>

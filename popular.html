@@ -24,11 +24,11 @@
     <div class="navbar  fixed-top" id="navbar">
         <h1 style="color: red;cursor: pointer;width: 10%; " id="logo">Dizibox</h1>
         <ul>
-            <a class="link"  href="film.php">Home</a>
-            <a class="link"  href="movie.html">Movies</a>
-            <a class="link"  href="series.html">Series</a>
-            <a class="link"  href="popular.html">Popular</a>
-            <a class="link"  href="trends.html">Trends</a>
+            <a class="link" id="home" href="film.php">Home</a>
+            <a class="link" id="movies" href="movie.html">Movies</a>
+            <a class="link" id="series" href="series.html">Series</a>
+            <a class="link" id="popular" href="popular.html">Popular</a>
+            <a class="link" id="trend" href="trends.html">Trends</a>
             
         </ul>
 
@@ -55,11 +55,11 @@ let img = document.querySelectorAll('.popular')[0];
 
 popular.forEach((pop) => {
     img.innerHTML += `
-<div class="img-box  p-0 px-1 py-1 col-6 col-md-4 col-lg-3 col-xl-2">
-    <a   href="detay.html?id=${pop.url}&type=pop"><img src="${pop.resim}" class="movie"><div class="ikon"  >
+<div class="img-box  p-0 px-1 py-1 col-6 col-md-4 col-lg-3 col-xl-2" id="img-box">
+    <a   href="detay.html?id=${pop.url}&type=pop"><img src="${pop.resim}" class="movie"><div class="ikon" id="ikon" >
         <img class="takvim" src="icons/calendar3.svg" 
             "><h6>2022 popülerleri izle</h6> <img class="takvim" src="icons/star.svg"><h6>${pop.imdb}</h6>
-              </div>   <div class="name"> &nbsp ${pop.name}</div></a></div>
+              </div>   <div class="name" id="name"> &nbsp ${pop.name}</div></a></div>
               
               
               
@@ -73,3 +73,60 @@ popular.forEach((pop) => {
 <br><br><br>
 
 </html>
+
+<style>
+    @media (max-width:415px) {
+
+        #logo {
+            margin-top: -120px;
+            font-size: 50px;
+        }
+
+        #navbar {
+            height: 150px;
+            width: 450px;
+        }
+
+        #home {
+            margin-top: 50px;
+            margin-left: -120px;
+
+        }
+
+        #movies {
+            margin-left: -120px;
+            margin-top: 50px;
+        }
+
+        #series {
+            margin-left: -115px;
+            margin-top: 50px;
+        }
+
+        #popular {
+            margin-left: -450px;
+            margin-top: 100px;
+
+        }
+
+        #trend {
+            margin-left: -85px;
+            margin-top: 100px;
+        }
+
+        #img-box{
+            margin-top: 50px;
+            
+        }
+        #ikon{
+            width: 150px;
+        }
+        #name{
+            margin-top: 210px;
+            width: 180px;
+            margin-left: 5px;
+        }
+
+
+    }
+</style>

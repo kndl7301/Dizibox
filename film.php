@@ -34,18 +34,18 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
     <!-- NAVBAR -->
     <div class="navbar  fixed-top" id="navbar">
         <h1 style="color: red;cursor: pointer;width: 10%; " id="logo">Dizibox</h1>
-        <ul>
-            <a class="link" href="film.php">Home</a>
-            <a class="link" href="movie.html">Movies</a>
-            <a class="link" href="series.html">Series</a>
-            <a class="link" href="">Popular</a>
-            <a class="link" href="">Trends</a>
+        <ul id="ul">
+            <a class="link" id="home" href="film.php">Home</a>
+            <a class="link" id="movies" href="movie.html">Movies</a>
+            <a class="link" id="series" href="series.html">Series</a>
+            <a class="link" id="popular" href="">Popular</a>
+            <a class="link" id="trend" href="">Trends</a>
            
-            <a href="login.php" class="btn btn-danger">logout <br></a>
+            <a href="login.php" class="btn btn-danger" id="logout">logout <br></a>
 
             
 
-            <div class="dropdown">
+            <div class="dropdown" >
                 <i class="fa fa-bars" style="font-size: 35px;color: blue;"></i>
                 <div class="dropdown-content">
                     
@@ -90,6 +90,84 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
                 li{
                     list-style:none;
                 }
+
+
+
+                @media  (max-width:420px){
+
+                    #logo{
+                        margin-top: -120px;
+                        font-size:50px;
+                    }
+                    #navbar{
+                        height:200px;
+                        width: 450px;
+                    }
+
+                    #home{
+                        margin-top: 50px;
+                        margin-left: -100px;
+                        
+                    }
+                    #movies{
+                        margin-left: -120px;
+                       margin-top: 50px;
+                    }
+                    #series{
+                        margin-left: -115px;
+                        margin-top: 50px;
+                    }
+                    #popular{
+                        margin-left: -400px;
+                        margin-top: 100px;
+
+                    }
+                    #trend{
+                        margin-left: -85px;
+                        margin-top: 100px;
+                    }
+
+                    #sidebar{
+                        margin-top: 80px;
+                        text-align:center;
+                       
+                    }
+
+                 
+
+
+                    #logout{
+                        height:35px;
+                        margin-left: -300px;
+                    }
+
+                    #başlayın{
+                        width:370px;
+                       margin-right: 50px;
+
+                    }
+                    #compact{
+                        margin-top: -90px;
+                        margin-left: 140px;
+                    }
+                   
+                
+
+                    .section1{
+                        margin-left: 10px;
+                    }
+                    .section2{
+                        margin-left: 50px;
+                    }
+                    .section3{
+                        margin-left: 50px;
+                    }
+                    .section4{
+                        margin-top: 50px;
+                    }
+
+                    
+                }
             </style>
 
 
@@ -100,7 +178,7 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
     <!-- YAN MENÜ İKONLARI -->
 
 
-    <div class="sidebar   ">
+    <div class="sidebar" id="sidebar">
 
         <a href="">
             <img src="icons/house-door-fill.svg" width="32px" height="32px"
@@ -149,17 +227,17 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
 
 
 
-    <div class="arka "
+    <div class="arka" 
         style="margin-left: 60px; height: 1000px;background-image: linear-gradient(to top,rgb(19 9 9 / 80%) 0,rgba(0, 0, 0, 0.5) 40%,rgba(0, 0, 0, 0.5) 75%,rgba(5, 5, 5, 0.8) 100%),url(pictures/netflıxbackground.jpg);">
 
-        <div class="yazı">
-            <h1 style="color: rgb(255, 251, 251); font-size: 65px; text-align: center;">Sınırsız
+        <div class="yazı" >
+            <h1  style="color: rgb(255, 251, 251); font-size: 65px; text-align: center;" >Sınırsız
                 film, dizi ve çok <br> daha fazlası.</h1>
             <h3 style="color: white; margin-top: 35px;">İstediğiniz yerde izleyin. İstediğiniz zaman
                 iptal edin.</h3>
             <h4 style="color: white; margin-top: 35px; ">İzlemeye hazır mısınız? Üyelik oluşturmak
-                veya üyeliğinize erişmek için e‑posta adresinizi girin.</h4>
-            <div class="" style="display: flex; ">
+                veya üyeliğinize erişmek için e posta adresinizi girin.</h4>
+            <div id="başlayın" style="display: flex; ">
                 <input class="form-control me-2 search" id="inputText"
                     style="width: 650px; height: 75px; margin-top: 50px; " type="text"
                     placeholder="E-posta adresinizi giriniz" aria-label="Search">
@@ -183,12 +261,12 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
 
     <!--FOOTEER-->
 
-    <div class="footer" style="background-color: rgb(10, 10, 10); color: white;">
+    <div class="footer" id="footer" style="background-color: rgb(10, 10, 10); color: white;">
         <div class="">
             <footer class="py-5 px-5">
                 <div class="row">
-                    <div class="col-2">
-                        <h5>Section</h5>
+                    <div class="col-2 section1">
+                        <h5 id="section1">Section</h5>
                         <ul class="nav flex-column">
                             <li><a href="#" class=" text-muted">Home</a></li>
                             <li><a href="#" class=" text-muted">Features</a></li>
@@ -197,28 +275,28 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
                         </ul>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-2 section2">
                         <h5>Section</h5>
                         <ul class="nav flex-column">
-                            <li><a href="#" class=" text-muted">Help center</a></li>
+                            <li><a href="#" class=" text-muted">Help </a></li>
                             <li><a href="#" class=" text-muted">Privacy</a></li>
-                            <li><a href="#" class=" text-muted">Speed test</a></li>
+                            <li><a href="#" class=" text-muted"> test</a></li>
                             <li><a href="#" class=" text-muted">Account</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-2 section3">
                         <h5>Section</h5>
                         <ul class="nav flex-column">
-                            <li><a href="#" class=" text-muted">Media Center</a></li>
-                            <li><a href="#" class=" text-muted">Ways to Watch</a></li>
-                            <li><a href="#" class=" text-muted">Only Dizibox</a>
-                            </li>
-                            <li><a href="#" class=" text-muted">Contact Us</a></li>
+                            <li><a href="#" class=" text-muted">Media </a></li>
+                            <li><a href="#" class=" text-muted"> movie</a></li>
+                            <li><a href="#" class=" text-muted"> Dizibox</a></li>
+                            
+                            <li><a href="#" class=" text-muted">ContactUs</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-4 offset-1">
+                    <div class="col-4 offset-1 section4">
                         <form>
                             <h5>Subscribe to our web site</h5>
                             <p>Monthly digest of whats new and exciting from us.</p>

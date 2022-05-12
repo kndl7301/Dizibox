@@ -25,17 +25,12 @@
         <div class="navbar  fixed-top" id="navbar">
             <h1 style="color: red;cursor: pointer;width: 10%; " id="logo">Dizibox</h1>
             <ul>
-                <a class="link" href="film.html" style="text-decoration:none;">Home</a>
-                <a class="link" href="movie.html" style="text-decoration:none;">Movies</a>
-                <a class="link" href="series.html" style="text-decoration:none;">Series</a>
-                <a class="link" href="popular.html" style="text-decoration:none;" >Popular</a>
-                <a class="link" href="trends.html" style="text-decoration:none;">Trends</a>
-              <a href="sign.html" style=text-decoration:none;>
-                    <button class="btn " id=""
-                        style="width: 80px;height: 40px;  background-color: red; color: white; font-size: 17px;">Sign
-                        ln</button></a>
-            </ul>
-          
+                <a class="link" id="home" href="film.php" style="text-decoration:none;">Home</a>
+                <a class="link" id="movies" href="movie.html" style="text-decoration:none;">Movies</a>
+                <a class="link" id="series" href="series.html" style="text-decoration:none;">Series</a>
+                <a class="link" id="popular" href="popular.html" style="text-decoration:none;" >Popular</a>
+                <a class="link" id="trend" href="trends.html" style="text-decoration:none;">Trends</a>
+            
     
         </div>
           
@@ -69,8 +64,8 @@
    current_series.episodes.forEach((e) => {
          detay2.innerHTML +=  `
  
-         <div class="blm col-6 col-md-4 col-lg-2">
-            <br>       <br>
+         <div class="blm col-6 col-md-4 col-lg-2" id="blm">
+            <br>       
                 
             <a  href="detay2.html?id=${e.url}"> </a> 
             
@@ -80,7 +75,7 @@
                 
             
                 
-            <div >   <h2 style="color:white;">&nbsp${e.name}</h2>  </div>
+            <div >   <h2 style="color:white;" id="name">&nbsp${e.name}</h2>  </div>
             <br><br><br>
             
         </div >
@@ -94,3 +89,60 @@
 </script>
 
 </html>
+
+
+<style>
+     @media (max-width:415px) {
+
+#logo {
+    margin-top: -120px;
+    font-size: 50px;
+}
+
+#navbar {
+    height: 150px;
+    width: 450px;
+}
+
+#home {
+    margin-top: 50px;
+    margin-left: -120px;
+
+}
+
+#movies {
+    margin-left: -120px;
+    margin-top: 50px;
+}
+
+#series {
+    margin-left: -115px;
+    margin-top: 50px;
+}
+
+#popular {
+    margin-left: -450px;
+    margin-top: 100px;
+
+}
+
+#trend {
+    margin-left: -85px;
+    margin-top: 100px;
+}
+
+#blm{
+    margin-top: 150px;
+    height: 190px;
+}
+#name{
+    margin-left: 50px;
+}
+
+
+
+
+
+
+}
+</style>
