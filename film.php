@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-$baglan = mysqli_connect("localhost","root","","login") or die("connection failed:".connection_error());
+$baglan = mysqli_connect("localhost","root","","kayit") or die("connection failed:".connection_error());
 
  
 
@@ -36,10 +36,10 @@ $baglan = mysqli_connect("localhost","root","","login") or die("connection faile
         <h1 style="color: red;cursor: pointer;width: 10%; " id="logo">Dizibox</h1>
         <ul id="ul">
             <a class="link" id="home" href="film.php">Home</a>
-            <a class="link" id="movies" href="movie.html">Movies</a>
+            <a class="link" id="movies" href="movies.html">Movies</a>
             <a class="link" id="series" href="series.html">Series</a>
-            <a class="link" id="popular" href="">Popular</a>
-            <a class="link" id="trend" href="">Trends</a>
+            <a class="link" id="popular" href="popular.html">Popular</a>
+            <a class="link" id="trend" href="trends.html">Trends</a>
            
             <a href="login.php" class="btn btn-danger" id="logout">logout <br></a>
 
