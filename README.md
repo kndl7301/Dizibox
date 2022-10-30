@@ -1,8 +1,6 @@
 # Ekran Görüntüleri
 
-# Login page
 
-![alt text](https://github.com/kndl7301/Dizibox/blob/main/pictures/login.jpg)
 
 # Homepage
 
@@ -17,3 +15,8 @@
 
 # Content of Series
 ![alt text](https://github.com/kndl7301/Dizibox/blob/main/pictures/series2.jpg)
+
+
+# Login page
+
+![alt text](https://github.com/kndl7301/Dizibox/blob/main/pictures/login.jpg)
