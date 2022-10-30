@@ -1,5 +1,5 @@
 # Dizibox
-Örnek dizi film sitesi
+Örnek dizi film projesi
 
 
 
