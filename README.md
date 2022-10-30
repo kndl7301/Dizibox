@@ -1,5 +1,7 @@
 # Dizibox
-Örnek dizi film projesi
+Örnek dizi film sitesi
+
+#Ekran Görüntüleri
 
 
 
