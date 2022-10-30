@@ -1,4 +1,4 @@
-#Ekran Görüntüleri
+#Dizibox
 Örnek dizi film sitesi
 
 
